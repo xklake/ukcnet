@@ -17,7 +17,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
 </div>
 <!--在线客服 begin -->
-<div class="QQbox" style="display:none" id="divQQbox" >
+<!--div class="QQbox" style="display:none" id="divQQbox" >
      <div class="Qlist" id="divOnline" onmouseout="hideMsgBox(event);" style="display:none;">
           <ul>
               <li><a href="http://wpa.qq.com/msgrd?v=3&uin=910459407&site=qq&menu=yes" target="_blank"><img src="<?php echo IMG_PATH;?>kefu/floatServiceQq.gif" alt="QQ咨询"></a></li>
@@ -27,7 +27,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
           </ul>
      </div>
      <div id="divMenu" onmouseover="OnlineOver();"><img src="<?php echo IMG_PATH;?>kefu/floatService.gif" class="press" ></div>
-</div>
+</div-->
 <script language="JavaScript" type="text/JavaScript">
 var tips; var theTop = 200/*这是默认高度,越大越往下*/; var old = theTop;
 function initFloatTips() {

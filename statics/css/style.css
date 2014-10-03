@@ -6,7 +6,8 @@ img{border:none;}
 ul,ol,li{list-style-type:none;}
 .dib{display:block;}       .din{display:none;}        .dii{display:inline;}
 .fa{font-family:arial;}    .ft{font-family:tahoma;}   .fw{font-family:"微软雅黑"}    .fs{font-family:'宋体';}
-.fl{float:left;}        .fr{float:right;}
+.fl{float:left;}        
+.fr{float:right;}
 .f12{font-size:12px;}   .f14{font-size:14px;}   .f16{font-size:16px;}
 .fb{font-weight:bold;}  .fb16{font-weight:bold; font-size:16px;} .fb14{font-weight:bold; font-size:14px;}
 .tc{text-align:center;}    .tl{text-align:left;}    .tr{text-align:right;}
@@ -41,7 +42,9 @@ body{background:url(img/global_map.png) no-repeat;}
 .top .logo{padding:14px 0 15px; height:67px;}
 .top .logo img{width:417px; height:67px; overflow:hidden;}
 .top .fr{width:340px;}
+
 .topmenu{background:url(img/topmenu_bj.png) no-repeat; width:245px; padding-bottom:2px; height:32px; line-height:32px; text-align:center; color:#e9eef3; float:right;}
+
 .topmenu a{margin:0 6px; color:#e9eef3;}
 .topmenu a:hover{color:#ff0;}
 .top .phone{width:339px; height:30px; padding-top:25px; float:right;}
@@ -197,3 +200,15 @@ body{background:url(img/global_map.png) no-repeat;}
 .QQbox .Qlist li.phone_tle{padding-top:8px;}
 .QQbox .Qlist li.phone{padding-top:0;}
 .QQbox .Qlist li.phone b{font-family:"微软雅黑"; font-size:14px;}
+
+.login{ float:right;color:#08086b;}
+
+.login .langu
+{
+	float:right;height: 24px;margin-top:1px;font-size:12px;
+}
+
+.login .langu a
+{
+color:#08086b;	
+}

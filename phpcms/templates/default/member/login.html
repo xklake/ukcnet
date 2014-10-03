@@ -75,14 +75,13 @@ $(function(){
 #footer a{color:#666;}
 
 </style>
+
+<link rel="stylesheet" href="{CSS_PATH}style.css" type="text/css" />
 </head>
 <body>
-<div id="header">
-	<div class="content">
-	<div class="logo"><a href="{$siteinfo['domain']}"><img src="{IMG_PATH}v9/member_logo.jpg"/></a></div>
-    <span class="rt log"></span>
-    </div>
-</div>
+
+{template "member","header"}	
+
 <div id="content">
 <div class="col-left form-login" id="logindiv">
 <form method="post" action="" onsubmit="save_username();" id="myform" name="myform">
