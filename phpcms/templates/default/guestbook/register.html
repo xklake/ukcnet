@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">  
+<meta name="description" content="{$SEO['description']}">
+<script type="text/javascript" src="{JS_PATH}formvalidator.js" charset="UTF-8"></script> 
+<script type="text/javascript" src="{JS_PATH}formvalidatorregex.js" charset="UTF-8"></script>
+<link href="{CSS_PATH}guestbook.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}table_form.css" rel="stylesheet" type="text/css" /> 
+{template "content","header"}
+<!--main-->
+<div class="container w990">
+     <div class="main ovh">
+	      {template "content", "lawer"} 
+		  <div class="info fr">
+			   <div class="conts">
+					<div class="conts_tle">您的位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)}法律咨询</div>
+					<div class="info_in b2">
+						 <div class="askmain">
+							  <div class="wxtishi">
+                                   <div class="tstle"><span class="fb14">温馨提示：</span></div>
+                                   <div class="tsmain round">
+                                        <p>1、不论您想得到法律咨询、代书服务或想聘请律师人作为代理人、辨护人需来访，请提前与律师预约。</p>
+                                        <p>2、如果时间允许，您可以在本栏目给律师留言，律师会及时回复您的留言。</p>
+                                        <p>3、如果您所涉及案情较紧急，而律师手机关机或未接听，说明律师正在开庭或其他原因不方便应答，律师看到信息后立即回复，或者请您稍后再拨打。<span class="cf00">咨询电话：13888888888</span></p>
+                                   </div>
+                              </div>
+					
+							  <div class="ask ovh">
+				    <form action="{APP_PATH}index.php?m=guestbook&c=index&a=register&siteid={$siteid}" method="post" name="myform" id="myform">
+<table cellspacing="1" cellpadding="0" class="table_form" width="960px">
+<tbody>
+<tr> 
+<th>姓　　名：</th>
+<td><input type="text" value="" id="name" name="name" class="input-text" onkeyup="value="/oblog/value.replace(/[^\u4E00-\u9FA5]/g,'')></td>
+</tr>
+<tr> 
+<th>性　　别：</th>
+<td><input type="radio" value="男" name="sex" checked="checked"/> 男<input type="radio" value="女" name="sex"/> 女</td>
+</tr>
+<tr> 
+<th>联 系QQ：</th>
+<td><input type="text" size="40" value="" name="lxqq" id="lxqq" class="input-text"></td>
+</tr>
+<th>电子邮箱：</th>
+<td><input type="text" size="40" value="" name="email" id="email" class="input-text"></td>
+</tr>
+<tr>
+<th>常用电话：</th>
+<td><input type="text" size="40" value="" name="tel" id="tel" class="input-text"></td>
+</tr>
+<tr> 
+  <th>所属分类：</th>
+  <td width="300">
+  <select  style="width: 36%;" id="typeid" name="typeid">
+  <option value="0">默认分类</option>
+{loop $types $type_arr}
+<option value="{$type_arr['typeid']}">{$type_arr['name']}</option>
+{/loop}
+</select>
+  </td>
+</tr>
+
+<tr>
+  <th>填写留言：</th>
+  <td><textarea name="introduce" cols="40" rows="5" class="input-text" id="introduce" style='width:500px;height:70px;'></textarea></td>
+</tr>
+{if $setting[1]['enablecheckcode']=='1'}
+<tr>
+       <th>验证码：</th>
+       <td><input name="code" type="text" id="code" size="10"  class="input-text"/> {form::checkcode('code_img','4','14',110,30)}</td>
+</tr>
+{/if}
+<tr> 
+<th></th>
+<td><input type="submit" value=" 提 交 " name="dosubmit" class="button">　　<input type="reset" value=" 取 消 " name="reset" class="button"> </td>
+</tr> 
+</tbody></table>
+</form>
+							  </div>
+							  <div class="reply">
+                              {pc:guestbook action="type_lists" listorder="desc" siteid="$siteid"}
+                              {loop $data $type_v} 
+{pc:guestbook action="lists" typeid="$type_v[typeid]" page="$_GET[page]"  siteid="$siteid"  order="desc" num="4" return="dat"}
+                              {loop $dat $v}
+                           <dl class="replylist">
+                            <dt><span class="cf00"><b style="float:right">分类：{$type_v[name]}</b>姓名：{$v[name]}</span></dt>
+							           <dd class="reply_in">
+									       <div class="reply_t line">
+										        <p class="fl"><span>咨询内容：</span></p>
+												<p class="fr c666">{$v[introduce]}</p>
+										   </div>
+										   <div class="reply_t">
+										        <p class="fl"><span>律师回复：{$v[reply]}</span></p>
+												<p class="fr c666"></p>
+										   </div>
+										   <div class="reply_img"></div>
+									   </dd>
+									   <dd class="reply_time c999 tr"><span>某某律师</span>发表于&nbsp; {date('Y-m-d H:i:s',$v[addtime])}</dd>
+						           </dl>
+								   	{/loop}
+                                    {/pc}
+                                    	{/loop}
+                                    {/pc}	
+                                	</div>
+						</div>
+						<div class="page" id="ask_page">{$pages}</div>
+                 <script type="text/javascript">
+<!--
+	$(function(){
+	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
+	$("#name").formValidator({onshow:"请输入姓名",onfocus:"请输入姓名"}).inputValidator({min:4,max:10,onerror:"姓名应该为2-3个汉字"}).regexValidator({regexp:"ps_username",datatype:"enum",onerror:"姓名格式错误"});
+	
+	$("#email").formValidator({onshow:"请输入电子邮箱",onfocus:"请输入电子邮箱",oncorrect:"邮箱格式正确"}).inputValidator({min:2,max:32,onerror:"邮箱应该为2-32位之间"}).regexValidator({regexp:"email",datatype:"enum",onerror:"请填写正确的邮箱地址"});
+	
+	$("#lxqq").formValidator({onshow:"请输入QQ号码",onfocus:"请输入QQ号码",oncorrect:"QQ格式正确"}).inputValidator({min:5,max:10,onerror:"QQ号码应该为5-10位之间"}).regexValidator({regexp:"^[0-9]{5,20}$",onerror:"请填写正确的腾讯QQ号"});
+	
+	$("#tel").formValidator({onshow:"请输入联系电话",onfocus:"请输入联系电话",oncorrect:"电话格式正确"}).inputValidator({min:8,max:13,onerror:"电话号码应该为8-13为之间"}).regexValidator({regexp:"^[0-9-]{6,13}$",onerror:"请填写正确的电话号码"});
+	$("#introduce").formValidator({onshow:"请输入留言内容",onfocus:"请输入留言内容"}).inputValidator({min:10,max:200,onerror:"10-100个字之间"});
+	
+ 	$("#code").formValidator({onshow:"请输入验证码",onfocus:"验证码不能为空"}).inputValidator({min:1,max:999,onerror:"验证码不能为空"}).ajaxValidator({
+	    type : "get",
+		url : "",
+		data :"m=pay&c=deposit&a=public_checkcode",
+		datatype : "html",
+		async:'false',
+		success : function(data){	
+            if(data == 1)
+			{
+                return true;
+			}
+            else
+			{
+                return false;
+			}
+		},
+		buttons: $("#dosubmit"),
+		onerror : "验证码错误",
+		onwait : "验证中"
+	});
+ 	})
+//-->
+</script>
+					</div>
+			   </div>
+	      </div>
+	 </div>
+{template "content","footer"}

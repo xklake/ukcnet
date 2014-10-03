@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="{CSS_PATH}style.css" type="text/css" />
+</head>
+
+<body>
+<div class="header">
+     <div class="top">
+	      <div class="w990">
+	           <div class="logo fl"><a href="{APP_PATH}"><img src="{IMG_PATH}logo.png" /></a></div>
+		       <div class="fr">
+		  	        <p class="topmenu"><a href="javascript:void(0)" onClick="myhomepage()" name="homepage">设为首页</a>|<a href="javascript:void(0)" onClick="addfavorite()">加入收藏</a>|<a href="http://www.lawcqg.net/" target="_blank">ENGLISH</a></p>
+					
+			        <!--p class="phone"><img src="{IMG_PATH}phone.png" /></p-->
+		       </div>
+		  </div>
+	 </div>
+	 <div class="nav">
+	      <ul class="navmain">
+		      <li><a href="{APP_PATH}"{if !$catid && $_GET['m']!=guestbook} class="hover"{/if}>网站首页</a></li>   
+			  {pc:content action="category" num="8"}
+			  {loop $data $r}
+			  <li><a href="{$r[url]}" {if $r[catid]==$catid}class="hover"{/if}>{$r[catname]}</a></li>    
+			  {/loop}
+			  {/pc}
+			  
+		  </ul>
+	 </div>
+	 <!--div class="subnav">
+	      <div class="w990"><b>热门内容：</b>
+		  {pc:content action="category" catid="14"}
+		  {loop $data $r}
+        <a href="{$r[url]}">{$r[catname]}</a>
+          {if $n !== count($data)}|{/if}
+          {/loop}
+		  {/pc}
+		  </div>
+	 </div-->
+	 <div class="banner"><a href="{APP_PATH}"><img src="{IMG_PATH}ad/banner.jpg" /></a></div>
+</div>

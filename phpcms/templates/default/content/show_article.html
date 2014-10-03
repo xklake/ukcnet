@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">  
+<meta name="description" content="{$SEO['description']}"> 
+{template "content","header"}
+<!--main-->
+<div class="container w990">
+     <div class="main ovh">
+	       {template "content", "lawer"} 
+		  <div class="info fr">
+			   <div class="conts">
+					<div class="conts_tle">您的位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)}正文</div>
+					<div class="info_in b2">
+						 <div class="wenzhang">
+							  <div class="wztle">
+			                       <h1>{$title}</h1>
+					               <p>来源：{$copyfrom}&nbsp; 人气：<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>&nbsp; 时间：{$inputtime}</p>
+							  </div>
+					          <div class="wztext">
+						           {$content}
+							  </div>
+                              <div class="page">{$pages}
+					     </div>
+                         <div style="clear:both">
+                         <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a>
+                         <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+                         </div>
+					</div>
+			   </div>
+	      </div>
+	 </div>
+{template "content","footer"}
