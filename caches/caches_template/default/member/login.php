@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET;?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>phpcmsV9 - <?php echo L('member','','member').L('manage_center');?></title>
+<title><?php echo L('member','','member').L('manage_center');?></title>
 <link href="<?php echo CSS_PATH;?>reset.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo CSS_PATH;?>table_form.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.min.js"></script>
@@ -101,7 +101,7 @@ $(function(){
 		<a href="index.php?m=member&c=index&a=public_forget_password&siteid=<?php echo $siteid;?>" class="blue"><?php echo L('forgetpassword');?></a><br />
 		<div class="submit"><input type="submit" name="dosubmit" id="dosubmit" value="<?php echo L('login');?>"></div></div>
         <div class="hr"><hr /></div>
-        <div class="reg"><?php echo L('no_phpcms_account');?><br />
+        <div class="reg">
         	<div class="submit"><input type="button" name="register" value="<?php echo L('immediately').L('register');?>" onclick="redirect('<?php echo APP_PATH;?>index.php?m=member&c=index&a=register&siteid=<?php echo $siteid;?>')"></div></div>
 </form>
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET;?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>phpcmsV9 - <?php echo L('member','','member').L('manage_center');?></title>
+<title><?php echo L('member','','member').L('manage_center');?></title>
 <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>member_common.js"></script>
 <script type="text/javascript" src="<?php echo JS_PATH;?>formvalidator.js" charset="UTF-8"></script>
