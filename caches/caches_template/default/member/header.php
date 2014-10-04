@@ -24,7 +24,7 @@
 	        	
 	        	<div class="login">
 							<div class="langu"><a href="http://www.ukcnetpa.org"><span>&nbsp;&nbsp;中文</span></a>&nbsp;<a href="http://www.ukcnetpa.org/" target="_blank"><span>ENGLISH&nbsp;&nbsp;</span></a></div>
-	        		<script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="100" height="24" frameborder="0" scrolling="no"></iframe>')</script>
+	        		<div><script type="text/javascript">document.write('<iframe src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid=<?php echo get_siteid();?>" allowTransparency="true"  width="300" height="24" frameborder="0" scrolling="no"></iframe>')</script></div>
 	        	</div>
   	        
   	   			

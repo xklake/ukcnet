@@ -120,8 +120,8 @@ function show_protocol() {
 .log span{color:#ced9e7}
 .log a{color:#049;text-decoration: none;}
 .log a:hover{text-decoration: underline;}
-#header{ height:94px; background:url(<?php echo IMG_PATH;?>member/h.png) repeat-x}
-#header .logo{ padding-right:100px;float:left;background:url(<?php echo IMG_PATH;?>member/login-logo.png) no-repeat right 2px;}
+#header{ height:134px; }
+#header .logo{ padding-right:100px;float:left;}
 #header .content{width:920px; margin:auto; height:60px;padding:10px 0 0 0}
 #content{width:920px; margin:auto; padding:20px 0 0 0; overflow:auto}
 .form-login{width:420px; padding-left:40px}
@@ -215,6 +215,7 @@ function show_protocol() {
     <span class="log"></span>
     </div>
 </div-->
+
 
 <div id="content">
 	<h2><?php echo L('member').L('register');?>&nbsp;&nbsp;&nbsp;&nbsp;<span <?php if(!isset($_GET['t'])) { ?>class="on"<?php } ?>><em>1</em><?php echo L('fill_in').L('info');?></span>

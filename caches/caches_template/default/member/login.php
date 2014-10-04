@@ -31,8 +31,8 @@ $(function(){
 .log span{color:#ced9e7}
 .log a{color:#049;text-decoration: none;}
 .log a:hover{text-decoration: underline;}
-#header{ height:94px; background:url(<?php echo IMG_PATH;?>member/h.png) repeat-x}
-#header .logo{ padding-right:100px;float:left;background:url(<?php echo IMG_PATH;?>member/login-logo.png) no-repeat right 2px;}
+#header{ height:134px; }
+#header .logo{ padding-right:100px;float:left;}
 #header .content{width:920px; margin:auto; height:60px;padding:10px 0 0 0}
 #content{width:920px; margin:auto; padding:36px 0 0 0}
 .form-login{ width:440px; padding-left:40px}
@@ -105,7 +105,7 @@ $(function(){
         	<div class="submit"><input type="button" name="register" value="<?php echo L('immediately').L('register');?>" onclick="redirect('<?php echo APP_PATH;?>index.php?m=member&c=index&a=register&siteid=<?php echo $siteid;?>')"></div></div>
 </form>
 </div>
-    <div class="col-auto">
+    <div class="col-auto" style="display:none">
 			<?php if($setting['connect_enable']) { ?>
     		<div class="col-1">
             	<div class="content">
