@@ -1,7 +1,8 @@
 {template "content","header"}
 <!--main-->
-<div class="main photo-channel">
-<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > {catpos($catid)}</div>
+<div class="container w990 photo-channel">
+<div class="conts_tle">您的位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)}列表 </div>
+
 <div class="bk10"></div>
 	{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
 		<ul class="photo-list picbig">

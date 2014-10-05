@@ -158,6 +158,7 @@ function showpic(type, replay) {
 		}
 	});
 }
+
 //预加载图片
 function loadpic(id) {
 	url = $("#pictureurls li:nth-child("+id+") img").attr("rel");
