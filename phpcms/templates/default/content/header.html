@@ -25,21 +25,25 @@
 		    <li><a href="{APP_PATH}"{if !$catid && $_GET['m']!=guestbook} class="hover"{/if}>网站首页</a></li>   
 			  {pc:content action="category" num="8"}
 			  {loop $data $r}
-			  <li><a href="{$r[url]}" {if $r[catid]==$catid}class="hover"{/if}>{$r[catname]}</a></li>    
+
+			  <li><a href="{$r[url]}" {if $r[catid]==$catid}class="hover"{/if}>{$r[catname]}</a>
+					{pc:content action="category" catid="$r[catid]" num="25" siteid="$siteid" order="listorder ASC"  return="da"}
+          	{if $da}  <!--开始循环二级导航 如果有数据-->
+              <ul class="subnav">
+              	{loop $da $v}
+	                <li><a href="{$v[url]}" > {$v[catname]}</a></li>
+                {/loop} 
+              </ul>
+            {/if}   <!--二级导航循环结束-->
+          {/pc}			  	
+			  </li>    
 			  {/loop}
 			  {/pc}
 			  
 		  </ul>
 	 </div>
-	 <!--div class="subnav">
-	      <div class="w990"><b>热门内容：</b>
-		  {pc:content action="category" catid="14"}
-		  {loop $data $r}
-        <a href="{$r[url]}">{$r[catname]}</a>
-          {if $n !== count($data)}|{/if}
-          {/loop}
-		  {/pc}
-		  </div>
-	 </div-->
+
 	 <div class="banner"><a href="{APP_PATH}"><img src="{IMG_PATH}ad/banner.jpg" /></a></div>
+	 
+	 
 </div>

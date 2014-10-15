@@ -17,7 +17,7 @@
 						 <div class="wenzhang">
 							  <div class="wztle">
 			                       <h1><?php echo $title;?></h1>
-					               <p>来源：<?php echo $copyfrom;?>&nbsp; 人气：<script language="JavaScript" src="<?php echo APP_PATH;?>api.php?op=count&id=<?php echo $id;?>&modelid=<?php echo $modelid;?>"></script>&nbsp; 时间：<?php echo $inputtime;?></p>
+					               <p>时间：<?php echo $inputtime;?></p>
 							  </div>
 					          <div class="wztext">
 						           <?php echo $content;?>

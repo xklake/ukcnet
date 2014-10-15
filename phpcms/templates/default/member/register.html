@@ -145,6 +145,8 @@ function show_protocol() {
 .form-reg .reg{padding:10px 0 0 120px}
 .form-reg .reg .submit{ margin-bottom:5px}
 
+.form textarea{width:318px;height:300px;}
+
 .submit{padding-left:3px}
 .submit,.submit input{ background: url({IMG_PATH}member/but.png) no-repeat; height:29px;width:auto;_width:0;overflow:visible !ie}
 .submit input{background-position: right top; border:none; padding:0 10px 0 7px; font-size:14px}
@@ -235,7 +237,7 @@ function show_protocol() {
 
 		{if $member_setting['choosemodel']}
 		<!--是否开启选择会员模型选项-->
-    	<div class="point">
+    	<!--div class="point">
             <div class="content">
 				<strong class="title">{L('notice')}</strong>
 				<p>{L('register_notice')}</p>
@@ -248,7 +250,7 @@ function show_protocol() {
 			{loop $modellist $k $v}
 			<label class="type"><input name="modelid" type="radio" value="{$k}" {if $k==$modelid}checked{/if} onclick="changemodel($(this).val())" />{$v['name']}</label>
 			{/loop}
-		</div>
+		</div-->
 		{/if}
 
     	<div class="input"><label>{L('username')}：</label><input type="text" id="username" name="username" size="36" class="input-text"></div>
