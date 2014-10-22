@@ -5,6 +5,8 @@
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
 <meta name="keywords" content="{$SEO['keyword']}">  
 <meta name="description" content="{$SEO['description']}"> 
+
+
 {template "content","header"}
 <!--main-->
 <div class="container w990">
@@ -19,11 +21,13 @@
 			                       <h1>{$title}</h1>
 					               <p>时间：{$inputtime}</p>
 							  </div>
-					          <div class="wztext">
+					      
+					      <div class="wztext">
 						           {$content}
 							  </div>
-                              <div class="page">{$pages}
-					     </div>
+                
+                <div class="page">{$pages}
+					      </div>
                          <div style="clear:both">
                          <strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a>
                          <strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
