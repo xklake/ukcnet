@@ -123,7 +123,7 @@ function show_protocol() {
 #header{ height:134px; }
 #header .logo{ padding-right:100px;float:left;}
 #header .content{width:920px; margin:auto; height:60px;padding:10px 0 0 0}
-#content{width:920px; margin:auto; padding:20px 0 0 0; overflow:auto}
+#content{width:890px; margin:0px auto; padding:50px; overflow:auto;background-color:#e2e1ed;border-left:1px #08086b  solid;border-right:1px #08086b  solid;}
 .form-login{width:420px; padding-left:40px}
 #content h2{font-size:25px;color:#494949;border-bottom: 1px dashed #CCC;padding-bottom:3px; margin-bottom:10px}
 #content h2 span{font-size:12px; font-weight:normal}
@@ -210,7 +210,7 @@ function show_protocol() {
 </style>
 </head>
 <body>
-{template "member","header"}	
+{template "member","header"}
 <!--div id="header">
 	<div class="content">
 	<div class="logo"><img src="{IMG_PATH}v9/member_logo.jpg"/></div>
@@ -237,7 +237,7 @@ function show_protocol() {
 
 		{if $member_setting['choosemodel']}
 		<!--是否开启选择会员模型选项-->
-    	<!--div class="point">
+    	<div class="point">
             <div class="content">
 				<strong class="title">{L('notice')}</strong>
 				<p>{L('register_notice')}</p>
@@ -250,7 +250,11 @@ function show_protocol() {
 			{loop $modellist $k $v}
 			<label class="type"><input name="modelid" type="radio" value="{$k}" {if $k==$modelid}checked{/if} onclick="changemodel($(this).val())" />{$v['name']}</label>
 			{/loop}
-		</div-->
+		</div>
+		{else}
+			{loop $modellist $k $v}
+			<input name="modelid" type="hidden" value="{$k}"/>
+			{/loop}
 		{/if}
 
     	<div class="input"><label>{L('username')}：</label><input type="text" id="username" name="username" size="36" class="input-text"></div>

@@ -5,6 +5,8 @@
 <title><?php if(isset($SEO['title']) && !empty($SEO['title'])) { ?><?php echo $SEO['title'];?><?php } ?><?php echo $SEO['site_title'];?></title>
 <meta name="keywords" content="<?php echo $SEO['keyword'];?>">  
 <meta name="description" content="<?php echo $SEO['description'];?>"> 
+
+
 <?php include template("content","header"); ?>
 <!--main-->
 <div class="container w990">
@@ -19,11 +21,13 @@
 			                       <h1><?php echo $title;?></h1>
 					               <p>时间：<?php echo $inputtime;?></p>
 							  </div>
-					          <div class="wztext">
+					      
+					      <div class="wztext">
 						           <?php echo $content;?>
 							  </div>
-                              <div class="page"><?php echo $pages;?>
-					     </div>
+                
+                <div class="page"><?php echo $pages;?>
+					      </div>
                          <div style="clear:both">
                          <strong>上一篇：</strong><a href="<?php echo $previous_page['url'];?>"><?php echo $previous_page['title'];?></a>
                          <strong>下一篇：</strong><a href="<?php echo $next_page['url'];?>"><?php echo $next_page['title'];?></a>
@@ -32,4 +36,6 @@
 			   </div>
 	      </div>
 	 </div>
+	</div>
+
 <?php include template("content","footer"); ?>

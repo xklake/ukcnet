@@ -16,30 +16,42 @@
 {/if}
 </head>
 <body>
-<div id="header">
-     <div class="top">
-     	
-	      <div class="w990">
+<div class="header">
+    <div class="top">
+
+        <div class="w990">
             <div class="logo fl"><a href="{APP_PATH}"><img src="{IMG_PATH}logo.png" /></a></div>
-	        	
-	        	<div class="login">
-							<div class="langu"><a href="http://www.ukcnetpa.org"><span>&nbsp;&nbsp;中文</span></a>&nbsp;<a href="http://www.ukcnetpa.org/" target="_blank"><span>ENGLISH&nbsp;&nbsp;</span></a></div>
-	        		<div><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="300" height="24" frameborder="0" scrolling="no"></iframe>')</script></div>
-	        	</div>
-  	        
-  	   			
-		  	</div>
-	 </div>
-	 
-	 <div class="nav">
-	      <ul class="navmain">
-		      <li><a href="{APP_PATH}"{if !$catid && $_GET['m']!=guestbook} class="hover"{/if}>网站首页</a></li>   
-			  {pc:content action="category" num="8"}
-			  {loop $data $r}
-			  <li><a href="{$r[url]}" {if $r[catid]==$catid}class="hover"{/if}>{$r[catname]}</a></li>    
-			  {/loop}
-			  {/pc}
-			  
-		  </ul>
-	 </div>
+
+            <div class="login">
+                <div class="langu"><a href="http://www.ukcnetpa.org" target="_self"><img src="{IMG_PATH}chinese.png" /><span>中文</span></a>&nbsp;<a target="_self" href="http://www.ukcnetpa.org/" target="_blank"><img src="{IMG_PATH}enlish.png" /><span>ENGLISH</span></a></div>
+                <div class="loginentry"><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="300" height="24" frameborder="0" scrolling="no"></iframe>')</script></div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="nav">
+        <ul class="navmain">
+            <li><a href="{APP_PATH}"{if !$catid && $_GET['m']!=guestbook} class="hover"{/if}>网站首页</a></li>
+            {pc:content action="category" num="8"}
+            {loop $data $r}
+
+            <li><a href="{$r[url]}" {if $r[catid]==$catid}class="hover"{/if}>{$r[catname]}</a>
+                {pc:content action="category" catid="$r[catid]" num="25" siteid="$siteid" order="listorder ASC"  return="da"}
+                {if $da}  <!--开始循环二级导航 如果有数据-->
+                <ul class="subnav">
+                    {loop $da $v}
+                    <li><a href="{$v[url]}" > {$v[catname]}</a></li>
+                    {/loop}
+                </ul>
+                {/if}   <!--二级导航循环结束-->
+                {/pc}
+            </li>
+            {/loop}
+            {/pc}
+
+        </ul>
+    </div>
+
+    <div class="banner"><a href="{APP_PATH}"><img src="{IMG_PATH}ad/banner.jpg" /></a></div>
 </div>

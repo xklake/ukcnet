@@ -40,8 +40,8 @@ body{background:url(img/bg.png) repeat;}
 
 /*index*/
 .top{border-top:1px #08086b  solid;border-left:1px #08086b  solid;border-right:1px #08086b  solid;  background-position:0 -43px; height:96px;width:990px;padding:0px auto;margin:0px auto;}
-.top .logo{padding:8px 0 0px 30px; height:90px;}
-.top .logo img{width:417px; height:80px; overflow:hidden;}
+.top .logo{padding:8px 0 0px 30px; height:88px;}
+.top .logo img{width:430px; height:80px; overflow:hidden;}
 .top .fr{width:340px;}
 
 .topmenu{width:245px; padding-bottom:2px; height:32px; line-height:32px; text-align:center; color:#e9eef3; float:right;}
@@ -113,7 +113,7 @@ body{background:url(img/bg.png) repeat;}
 
 .container
 {
-	border-left:1px #08086b  solid;border-right:1px #08086b  solid;
+	border-left:1px #08086b  solid;border-right:1px #08086b  solid;background-color:  #e2e1ed;
 }
 
 .containerfoot
@@ -207,19 +207,19 @@ body{background:url(img/bg.png) repeat;}
 .about dt{width:220px; margin:0 auto; text-align:center; margin-bottom:5px; font-size:14px; font-weight:100; color:#08086b;}
 .about dt img{width:220px; height:140px; overflow:hidden; margin-bottom:5px;}
 .about dd{text-indent:-18px; line-height:20px; color:#666; padding:0 5px;}
-.main_ct{width:468px; height:566px; overflow:hidden; zoom:1;}
+.main_ct{width:468px; height:580px; overflow:hidden; zoom:1;}
 .column_r{width:470px; overflow:hidden; zoom:1;}
 .new{background:url(img/hot_bj.png) no-repeat; width:438px; padding:15px 15px 0;}
 .new dl{border-bottom:1px dashed #ddd; padding:9px 0; overflow:hidden; zoom:1;}
 .new dt{height:30px; line-height:30px; overflow:hidden; text-align:center; margin-bottom:2px;}
 .new dt a{color:#08086b; font-size:20px; font-weight:bold;} 
 .new dd{text-indent:20px; color:#666; line-height:20px;}
-.newlist{overflow:hidden; padding:10px 15px;}
+.newlist{overflow:hidden; padding:10px 15px 0px 15px;}
 .newlist dt{background-position:0 0; width:440px; height:32px; line-height:32px; margin-bottom:10px;}
 .newlist dt span{padding-left:22px;}
 .newlist dt a{color:#3c6eb1; padding-right:5px;}
 .newlist dt a:hover{color:#f00;}
-.newlist dd{background-position:-450px -7px; text-indent:17px; height:26px; line-height:26px; vertical-align:middle; overflow:hidden;}
+.newlist dd{background-position:-450px -7px; text-indent:17px; height:26px; line-height:26px; vertical-align:middle; }
 .newlist dd a{font-size:14px;}
 .box .tle{background:#e7ecf2; height:32px; line-height:32px; padding:0 10px; border-bottom:1px #d9d9d9 solid;}
 .box .tle b{display:block; background-position:-436px -66px; color:#08086b; text-indent:35px;}
@@ -513,7 +513,8 @@ color:#08086b;
 {
 	border:2px #08086b solid;
 	margin:0px; padding:0px;
-	width:236px;
+	width:200px;
+    height: 60px;
 }
 
 

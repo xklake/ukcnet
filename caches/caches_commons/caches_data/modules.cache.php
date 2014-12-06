@@ -308,7 +308,7 @@ return array (
   1 => 
   array (
     \'is_post\' => \'1\',
-    \'enablecheckcode\' => \'0\',
+    \'enablecheckcode\' => \'1\',
   ),
 )',
     'listorder' => '0',
