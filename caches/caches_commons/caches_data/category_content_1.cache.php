@@ -434,7 +434,7 @@ return array (
     'parentdir' => '',
     'catdir' => 'news',
     'url' => 'http://www.ukcnetpa.org/index.php?m=content&c=index&a=lists&catid=49',
-    'items' => '0',
+    'items' => '6',
     'hits' => '0',
     'setting' => 'array (
   \'workflowid\' => \'\',

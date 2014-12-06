@@ -37,11 +37,30 @@
 		  
 		  
 		  <div class="main_rg fr">
+				  <div class="box">
+			    	<div class="boxtle"><span class="fb14">协会介绍</span></div>
+							<div class="boxmain">
+					     <dl class="about">
+						     	<dt><img alt="协会介绍" src="/statics/images/founder.png" /></dt>
+							 	 <dd>　 {pc:get sql="SELECT * FROM v9_page where catid=6"}
+  {loop $data $key $val}
+   {str_cut(strip_tags($val[content]),1000,'')}...
+{/loop}
+{/pc}<a href="http://www.ukcnetpa.org/index.php?m=content&c=index&a=lists&catid=6" class="cf60">详细>></a></dd>
+							 						 </dl>
+									</div>
+			    </div>
+
+
+			   			   
+			   
+			   
+			   <!--div class="space"></div>
 		       <div class="box">
 			        <div class="tle"><b class="f14">服务业务</b></div>
 					<div class="boxmain">
-						要放点啥内容？
-					     <div class="yewu">
+						
+					   <div class="yewu">
 						 {pc:content action="category" catid="14" num="12"}
 						 {loop $data $r}
 						 <a href="{$r[url]}">{$r[catname]}</a>
@@ -49,35 +68,22 @@
 						 {/pc}
 						 </div>
 					</div>
-			   </div>
-			   <div class="space"></div>
-			   <div class="askimg mb10"><a href="{APP_PATH}index.php?m=guestbook&c=index&a=register"></a></div>
-			   <div class="box">
-			        <div class="tle"><b class="f14">照片？？</b></div>
-					<div class="boxmain">
-						要放点啥内容？
-					     <ul class="fagui">
-						     {pc:content action="lists" catid="" num="10" order="listorder DESC"}
-							 {loop $data $r}
-							 <li><a href="{$r[url]}">{str_cut($r[title], 55, false)}</a></li>
-						     {/loop}
-							 {/pc}
-						 </ul>
-					</div>
-			   </div>
+			   </div-->			   
+
 	      </div>
 	 </div>
 	 <div class="space"></div>
-	 <div class="link">
-		  <div class="tle"><span class="fb14 fl">友情链接</span></div>
-		  <div class="p10">
+	 <div class="link friendlylinktile">
+		  <div class="plink">
 			   <div class="links">
-			   {pc:link  action="type_list" siteid="$siteid" order="listorder DESC" return="pic_link"}
+			   友情链接:{pc:link  action="type_list" siteid="$siteid" order="listorder DESC" return="pic_link"}
 				{loop $pic_link $v}
-				<a href="{$v['url']}" target="blank">{$v['name']}</a>
+				<a href="{$v['url']}" target="_blank">{$v['name']}</a>
 				{/loop}
 				{/pc}
 			   </div>
 		  </div>
 	 </div>
 {template "content","footer"}
+
+

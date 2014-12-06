@@ -14,17 +14,38 @@
 			   <div class="conts">
 					<div class="conts_tle">您的位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span>{catpos($catid)}列表 </div>
 					<div class="info_in b2">
-						 <ul class="infolist">
-							 {pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page"}
-                             {loop $data $r}  							  							  							  							  <li><a href="{$r[url]}" class="fl">{$r[title]}</a><span class="c999 fr">{date('Y-m-d',$r[inputtime])}</span>
-                             {if $n%5 ==0}</ul><ul class="infolist">	{/if}
+						 <!--ul class="infolist">
+							 {pc:content action="lists" catid="$catid" num="8" order="id DESC" page="$page"}
+                  {loop $data $r}  							  							  							  							  
+                       <li><a href="{$r[url]}" class="fl">{$r[title]}</a><span class="c999 fr">{date('Y-m-d',$r[inputtime])}</span>
+                            {if $n%5 ==0}</ul><ul class="infolist">	{/if} >
+													 <div>
+													 	{str_cut($r[description], 500)}
+													 	</div>	                            
                         {/loop}
                           {/pc}
-							  </ul>
+							  </ul-->
+
+
+						 <div class="articlecontent">
+							 {pc:content action="lists" catid="$catid" num="12" order="id DESC" page="$page"}
+                  {loop $data $r}  							  							  							  							  
+                       <p><a href="{$r[url]}" class="fl">{$r[title]}</a> <span style="margin-left:20px;">({date('Y-m-d',$r[inputtime])})</span>
+                            <!-- {if $n%5 ==0}</ul><ul class="infolist">	{/if} -->
+													 <div>
+													 	{str_cut($r[description], 500)}  
+													 	</div>
+													 	
+											<div class="dotline"></div>	                            
+                        {/loop}
+                          {/pc}
+							</div>
+
+
+
                            <div class="page">{$pages}</div>
 					</div>
 			   </div>
 	      </div>
-	 </div>
 	 </div>
 {template "content","footer"}
